@@ -41,7 +41,7 @@ namespace TelegramBotWithBackgroundService.Bot
                     => new TelegramBotClient(botConfig.Token, httpClient));
 
             builder.Services.AddHostedService<ConfigureWebhook>();
-            builder.Services.AddHostedService<HolAhvolBackgroundService>();
+            builder.Services.AddHostedService<BackgroundService>();
 
             var app = builder.Build();
 

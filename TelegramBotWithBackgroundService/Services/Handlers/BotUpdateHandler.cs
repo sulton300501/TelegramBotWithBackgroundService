@@ -38,7 +38,7 @@ namespace TelegramBotWithBackgroundService.Bot.Services.Handlers
 
         private Task HandleRandomMessageAsync(Message? message, CancellationToken cancellationToken)
         {
-            Console.WriteLine("{0} sent {1} type message", message?.From.Username, message?.Type);
+            Console.WriteLine("{0} sent {1}", message?.From.Username, message?.Type);
             return Task.CompletedTask;
         }
 
@@ -60,7 +60,7 @@ namespace TelegramBotWithBackgroundService.Bot.Services.Handlers
 
                     await _telegramBotClient.SendTextMessageAsync(
                         chatId: message.Chat.Id,
-                        text: $"You said:\n<i>{message.Text}</i>",
+                        text: $"You :\n<i>{message.Text}</i>",
                         parseMode: ParseMode.Html,
                         cancellationToken: cancellationToken);
                 }
